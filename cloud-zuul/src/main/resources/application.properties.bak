@@ -1,0 +1,15 @@
+spring.application.name=api-gateway
+server.port=5555
+
+eureka.client.service-url.defaultZone=http://localhost:1111/eureka/
+
+#zuul.routes.api-shop.path=/api-shop/**
+#zuul.routes.api-shop.url=shop-feign-service
+
+#zuul.routes.api-happyday.path=/api-happy-day/**
+#zuul.routes.api-happyday.url=happy-day
+
+zuul.ignored-services=happy-day
+zuul.debug.parameter=debug
+
+#logging.level.com.netflix=true

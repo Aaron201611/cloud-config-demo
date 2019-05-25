@@ -1,0 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+spring:
+  application:
+    name: happy-day
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: dev
+      name: cloud-config
+      enabled: true
+server:
+  port: 8011
+management:
+  endpoint:
+    refresh:
+      enabled: true
