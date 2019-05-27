@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: zipkin
+
+armeria:
+  ports: [{"Port":{"","",9941,[0,0,0,0,0,0,0]}}]

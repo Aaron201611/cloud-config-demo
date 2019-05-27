@@ -1,6 +1,8 @@
 package cloud.example.feign.shopfeignservice.controller;
 
 import cloud.example.feign.shopfeignservice.service.RefactorShopService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RefactorShopController {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private RefactorShopService refactorShopService;
 
     @RequestMapping(value = "shop4",method = RequestMethod.GET)
     public String shop4() throws Exception {
+        logger.info("=====call shop4=====");
         StringBuffer s = new StringBuffer();
         String ss = new String("小张".getBytes("utf-8"),"utf-8");
 //        s.append(shopInfoService.getShopInfo("123", URLEncoder.encode(ss,"utf-8"),100)).append("\n");
